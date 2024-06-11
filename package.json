@@ -2,7 +2,7 @@
   "name": "youtube-latest-carousel",
   "private": true,
   "scripts": {
-    "build": "prisma generate && remix vite:build",
+    "build": "remix vite:build",
     "predev": "prisma generate && prisma db push",
     "dev": "shopify app dev",
     "config:link": "shopify app config link",
@@ -17,8 +17,7 @@
     "shopify": "shopify",
     "prisma": "prisma",
     "graphql-codegen": "graphql-codegen",
-    "vite": "vite",
-    "postinstall": "prisma generate"
+    "vite": "vite"
   },
   "type": "module",
   "engines": {
@@ -37,7 +36,6 @@
     "@shopify/shopify-api": "^10.0.0",
     "@shopify/shopify-app-remix": "^2.8.2",
     "@shopify/shopify-app-session-storage-prisma": "^4.0.5",
-    "@vercel/remix": "^2.9.2-patch.2",
     "axios": "^1.7.2",
     "date-fns": "^3.6.0",
     "isbot": "^5.1.0",
