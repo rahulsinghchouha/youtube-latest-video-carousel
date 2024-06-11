@@ -1,0 +1,34 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "22f194d67ef4f81318def14cfb3d0151"
+name = "Youtube Latest Video Carousel"
+handle = "youtube-latest-video-carousel"
+application_url = "https://seven-concepts-cheese-literally.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "citsapptesting.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_themes,write_themes"
+
+[auth]
+redirect_urls = [
+  "https://seven-concepts-cheese-literally.trycloudflare.com/auth/callback",
+  "https://seven-concepts-cheese-literally.trycloudflare.com/auth/shopify/callback",
+  "https://seven-concepts-cheese-literally.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[app_proxy]
+url = "https://seven-concepts-cheese-literally.trycloudflare.com/fetch-youtube-data"
+subpath = "proxy-fetch"
+prefix = "apps"
+
+[pos]
+embedded = false
