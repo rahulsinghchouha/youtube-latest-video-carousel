@@ -1,7 +1,7 @@
 import { Autocomplete, Avatar, Badge, Banner, Bleed, BlockStack, Box, Button, CalloutCard, Card, Collapsible, DataTable, Grid, Icon, InlineGrid, InlineStack, Layout, Scrollable, Spinner, Text, TextField, Tooltip } from '@shopify/polaris';
 import { millify } from 'millify';
 import React, { useCallback, useState, useMemo, useEffect } from 'react'
-import { ViewIcon, HideIcon, SearchIcon, StatusActiveIcon } from '@shopify/polaris-icons';
+import { ViewIcon, HideIcon, SearchIcon, StatusActiveIcon,  } from '@shopify/polaris-icons';
 import { useFetcher } from '@remix-run/react';
 import { useAppBridge } from '@shopify/app-bridge-react';
 import debounce from "lodash.debounce";
@@ -139,7 +139,6 @@ function EditComponent({
 					q: searchQuery,
 				}
 			});
-
 			if (edit === true) {
 				setEditOptions(response.data.items?.map(item => ({ label: item.snippet.title, value: item.id.channelId })));
 			}
@@ -161,7 +160,7 @@ function EditComponent({
 				case 'QUOTA_EXCEEDED':
 					setCheckAPIKeyHealth(prev => ({...prev, healthOk: false, errorMsg:"QUOTA_EXCEEDED"}));
 				default:
-					setCheckAPIKeyHealth(prev => ({...prev, healthOk: false, errorMsg:errorReason}))
+					setCheckAPIKeyHealth(prev => ({...prev, healthOk: false, errorMsg:errorReason}));
 			}
 		}
 		const data = await response.json();
@@ -170,9 +169,7 @@ function EditComponent({
 
 	/************************
 	 *   UseEffect Hooks    *
-	 *      c, hl, hp       *
 	 ************************/
-
 
 	useEffect(() => {
 		fetchPlaylists();
@@ -328,7 +325,7 @@ function EditComponent({
 														illustration={item.snippet.thumbnails.high.url || "/yt_logo_rgb_light.png"}
 														primaryAction={{
 															content: (waitPlaylistSelection && waitPlaylistSelection === item.id) ? <Spinner accessibilityLabel="Small spinner example" size="small" /> : "Select Playlist",
-															url: '#',
+															url: undefined,
 															onAction: () => { handlePlaylistSelection(item) }
 														}}
 													>

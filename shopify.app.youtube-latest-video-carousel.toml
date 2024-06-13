@@ -3,7 +3,7 @@
 client_id = "22f194d67ef4f81318def14cfb3d0151"
 name = "Youtube Latest Video Carousel"
 handle = "youtube-latest-video-carousel"
-application_url = "https://seven-concepts-cheese-literally.trycloudflare.com"
+application_url = "https://else-subscription-engineering-material.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,16 +17,16 @@ scopes = "read_themes,write_themes"
 
 [auth]
 redirect_urls = [
-  "https://seven-concepts-cheese-literally.trycloudflare.com/auth/callback",
-  "https://seven-concepts-cheese-literally.trycloudflare.com/auth/shopify/callback",
-  "https://seven-concepts-cheese-literally.trycloudflare.com/api/auth/callback"
+  "https://else-subscription-engineering-material.trycloudflare.com/auth/callback",
+  "https://else-subscription-engineering-material.trycloudflare.com/auth/shopify/callback",
+  "https://else-subscription-engineering-material.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
 api_version = "2024-04"
 
 [app_proxy]
-url = "https://seven-concepts-cheese-literally.trycloudflare.com/fetch-youtube-data"
+url = "https://else-subscription-engineering-material.trycloudflare.com/fetch-youtube-data"
 subpath = "proxy-fetch"
 prefix = "apps"
 

@@ -76,6 +76,7 @@ export default function Index() {
 							<Box paddingBlock={"300"} >
 								{tabs[selected].id === "home-content-1" ? (
 									<BlockStack gap={"300"}>
+										<Banner tone="critical" title="Docker Enabled App Hosting Required" ><p>Please visit <Link url="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Heroku</Link> or <Link url="https://www.digitalocean.com/">Digital Ocean</Link> for details on how to set this up. Please host the app again and resubmit for review. - Shopify Team</p></Banner>
 										<Box borderInlineStartWidth="075" padding={"300"} shadow="200" background="input-bg-surface" >
 											<Text variant="headingMd" as="h1">Latest Youtube Video Carousel App</Text>
 										</Box>
