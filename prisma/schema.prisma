@@ -18,7 +18,7 @@ model YouTubeAPI {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   storeName  String   @unique
   apiKey     String
-	playlistId String?
+	playlistId String?	
 	showPlaylist Boolean? @default(false)  
   channelName String
   createdAt  DateTime @default(now()) @db.Timestamp
