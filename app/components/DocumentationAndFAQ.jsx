@@ -22,6 +22,7 @@ const DocumentationAndFAQ = () => {
 			panelID: 'adding-videos-to-carousel-2',
 		},
 	];
+	
 	return (
 		<BlockStack>
 			<Card roundedAbove="sm">

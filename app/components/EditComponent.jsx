@@ -1,7 +1,7 @@
-import { Autocomplete, Avatar, Badge, Banner, Bleed, BlockStack, Box, Button, CalloutCard, Card, Collapsible, DataTable, Grid, Icon, InlineGrid, InlineStack, Layout, Scrollable, Spinner, Text, TextField, Tooltip } from '@shopify/polaris';
+import { Autocomplete, Avatar, Badge, Banner, Bleed, BlockStack, Box, Button, CalloutCard, Card, Collapsible, DataTable, Grid, Icon, InlineGrid, InlineStack, Layout, Link, Scrollable, Spinner, Text, TextField, Tooltip } from '@shopify/polaris';
 import { millify } from 'millify';
 import React, { useCallback, useState, useMemo, useEffect } from 'react'
-import { ViewIcon, HideIcon, SearchIcon, StatusActiveIcon,  } from '@shopify/polaris-icons';
+import { ViewIcon, HideIcon, SearchIcon, StatusActiveIcon } from '@shopify/polaris-icons';
 import { useFetcher } from '@remix-run/react';
 import { useAppBridge } from '@shopify/app-bridge-react';
 import debounce from "lodash.debounce";
@@ -11,7 +11,8 @@ import axios from 'axios';
 function EditComponent({
 	history,
 	match,
-	ownApiKey
+	ownApiKey,
+	appBlockId
 }) {
 
 
@@ -69,6 +70,12 @@ function EditComponent({
 	 * Function Definitions *
 	 ************************/
 
+	
+	const handleDeepLink = () => {
+		const openUrl = `https://${match.storeName}/admin/themes/current/editor?template=index&addAppBlockId=${appBlockId}/youtube-carousel&target=newAppsSection`;
+		window.open(openUrl, "_blank");
+	}
+	
 
 	const handlePlaylistSelection = async (item) => {
 		try {
@@ -224,7 +231,16 @@ function EditComponent({
 					Carousel
 				</Text>
 				<Box padding={"100"} paddingBlockStart={"300"} >
+				<InlineStack align='space-between' blockAlign='center'>
 					<Text variant='bodyMd' as='p'>Active Channel:</Text>
+					<Box width="150px">
+						<InlineGrid gap={"200"} columns={2}>
+							<Button size="large" variant="secondary" onClick={() => { setShowCollapse(prev => !prev) }}>Edit</Button>
+							<Button size="large" variant="secondary" tone="critical" loading={removeWait} onClick={handleRemoveCarousel}>Remove</Button>
+						</InlineGrid>
+					</Box>
+				</InlineStack>
+				<Box paddingBlock={"100"}></Box>
 					<DataTable
 						columnContentTypes={[
 							'text',
@@ -241,14 +257,7 @@ function EditComponent({
 						rows={[[<Avatar size="xl" source={history ? history.thumbnail : undefined} initials="YT" name={history ? history.title : ""} />, history ? history.title : "", `${history.videoCount} Videos`, `${millify(history.viewCount)} Views`]]}
         	/>
 				</Box>
-				<InlineStack align='end'>
-					<Box width="150px">
-						<InlineGrid gap={"200"} columns={2}>
-							<Button size="large" variant="secondary" onClick={() => { setShowCollapse(prev => !prev) }}>Edit</Button>
-							<Button size="large" variant="secondary" tone="critical" loading={removeWait} onClick={handleRemoveCarousel}>Remove</Button>
-						</InlineGrid>
-					</Box>
-				</InlineStack>
+				
 
 				<Collapsible
 					open={showCollapse}
@@ -305,6 +314,7 @@ function EditComponent({
 							}
 						</Box>}
 				</div>}
+				
 				<Box paddingBlockStart={400}>
 					<Text as="p" variant='bodyMd'>Showing latest videos by default. You can also add a particular playlist on the website: <Button onClick={() => { setShowPlaylistCollapse(true); }} variant='plain'>Browse Playlists</Button></Text>
 					<Collapsible
@@ -343,6 +353,10 @@ function EditComponent({
 						</Box>
 					</Collapsible>
 				</Box>
+				<Box paddingBlock={"200"}></Box>
+				<Text variant="bodyMd" as='p'> You can directly add this to online store, saving you the hassle of navigating and editing the theme:</Text>
+				<Box paddingBlock={"100"}></Box>
+				<Button variant='secondary' icon={StatusActiveIcon}  onClick={handleDeepLink} >Add to Store</Button>
 			</Card>
 		</BlockStack>
 	)

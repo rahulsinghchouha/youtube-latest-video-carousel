@@ -24,11 +24,11 @@ export const loader = async ({ request }) => {
 		history = await getChannelInfo(match.apiKey, match.channelName);
 		match.apiKey = decrypt(match.apiKey)
 	}
-	return json({ history, match, ownApiKey:process.env.YOUTUBE_API_KEY,  });
+	return json({ history, match, ownApiKey:process.env.YOUTUBE_API_KEY, appBlockId: process.env.SHOPIFY_YOUTUBE_CAROUSEL_ID });
 };
 
 export default function Index() {
-	const { history, match, ownApiKey } = useLoaderData();
+	const { history, match, ownApiKey, appBlockId } = useLoaderData();
 	const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 	const [feedback, setFeedback] = useState({
 		score: 0,
@@ -117,7 +117,7 @@ export default function Index() {
 											<Card>
 												<IndexComponent feedback={feedback} history={history} setFeedback={setFeedback} setShowChannelForm={setShowChannelForm} setShowFeedbackModal={setShowFeedbackModal} showFeedbackModal={showFeedbackModal} />
 											</Card>
-											{history && <EditComponent match={match} history={history} ownApiKey={ownApiKey} />}
+											{history && <EditComponent match={match} history={history} ownApiKey={ownApiKey} appBlockId={appBlockId} />}
 											{showChannelForm && (<ChannelFormComponent ownApiKey={ownApiKey} setShowFeedbackModal={setShowFeedbackModal} setShowChannelForm={setShowChannelForm} />)}
 										</BlockStack>
 									) : (
