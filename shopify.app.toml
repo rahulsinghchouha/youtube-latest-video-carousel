@@ -2,8 +2,8 @@
 
 client_id = "22f194d67ef4f81318def14cfb3d0151"
 name = "Conative Youtube Carousel"
-handle = "conative-youtube-video-carousel"
-application_url = "https://youtube-latest-video-carousel.onrender.com/"
+handle = "youtube-latest-video-carousel"
+application_url = "https://twiki-ballot-damaged-least.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,16 +17,21 @@ scopes = "read_themes,write_themes"
 
 [auth]
 redirect_urls = [
-  "https://youtube-latest-video-carousel.onrender.com/auth/callback",
-  "https://youtube-latest-video-carousel.onrender.com/auth/shopify/callback",
-  "https://youtube-latest-video-carousel.onrender.com/api/auth/callback"
+  "https://twiki-ballot-damaged-least.trycloudflare.com/auth/callback",
+  "https://twiki-ballot-damaged-least.trycloudflare.com/auth/shopify/callback",
+  "https://twiki-ballot-damaged-least.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
 api_version = "2024-04"
 
+  [webhooks.privacy_compliance]
+  customer_deletion_url = "https://youtube-latest-video-carousel.onrender.com/webhooks"
+  customer_data_request_url = "https://youtube-latest-video-carousel.onrender.com/webhooks"
+  shop_deletion_url = "https://youtube-latest-video-carousel.onrender.com/webhooks"
+
 [app_proxy]
-url = "https://youtube-latest-video-carousel.onrender.com/fetch-youtube-data"
+url = "https://twiki-ballot-damaged-least.trycloudflare.com/fetch-youtube-data"
 subpath = "proxy-fetch"
 prefix = "apps"
 

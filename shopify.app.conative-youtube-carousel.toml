@@ -3,7 +3,7 @@
 client_id = "86140e47838600995a7a8b7d948b934c"
 name = "Conative Youtube Carousel"
 handle = "conative-youtube-carousel"
-application_url = "https://endorsement-griffin-discovery-driven.trycloudflare.com"
+application_url = "https://lovely-surface-assuming-announces.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://endorsement-griffin-discovery-driven.trycloudflare.com/auth/callback",
-  "https://endorsement-griffin-discovery-driven.trycloudflare.com/auth/shopify/callback",
-  "https://endorsement-griffin-discovery-driven.trycloudflare.com/api/auth/callback"
+  "https://lovely-surface-assuming-announces.trycloudflare.com/auth/callback",
+  "https://lovely-surface-assuming-announces.trycloudflare.com/auth/shopify/callback",
+  "https://lovely-surface-assuming-announces.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
