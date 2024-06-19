@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
 
               <Text variant='headingMd' as='h3'>Contact Us</Text>
               <Text variant="bodyMd" as='p'>
-                If you have any questions about our privacy policy, please contact us at <Link url="mailto:support@example.com">support@example.com</Link>.
+                If you have any questions about our privacy policy, please contact us at <Link url="mailto:citstestdev@gmail.com">citstestdev@gmail.com</Link>.
               </Text>
             </BlockStack>
           </Card>
