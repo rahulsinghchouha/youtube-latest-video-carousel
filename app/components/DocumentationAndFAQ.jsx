@@ -119,7 +119,7 @@ const DocumentationAndFAQ = () => {
 
 								<BlockStack gap={"300"}>
 									<Text variant="headingMd" as="h3">
-										2. Add a new section and choose Youtube Latest Carousel from the Apps Tab as shown.
+										2. Add a new section and choose Conative Youtube Carousel from the Apps Tab as shown.
 									</Text>
 									<Text variant='bodyMd' as='p'> This will create an empty carousel container in the store. You can drag and place this section as per your liking.</Text>
 									<InlineGrid columns={1}>

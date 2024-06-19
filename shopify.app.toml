@@ -1,8 +1,8 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "22f194d67ef4f81318def14cfb3d0151"
-name = "Youtube Latest Video Carousel"
-handle = "youtube-latest-video-carousel"
+name = "Conative Youtube Carousel"
+handle = "conative-youtube-video-carousel"
 application_url = "https://youtube-latest-video-carousel.onrender.com/"
 embedded = true
 
