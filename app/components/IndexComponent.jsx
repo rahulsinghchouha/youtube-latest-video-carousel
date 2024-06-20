@@ -19,8 +19,10 @@ function IndexComponent({
 	const fetcher = useFetcher();
 	const [feedbackEmail, setFeedbackEmail] = useState("");
 	const [feedbackContent, setFeedbackContent] = useState("");
+	const [testimonialSubmitLoading, setTestimonialSubmitLoading] = useState(false);
 
 	const handleSubmitFeedback = () => {
+		setTestimonialSubmitLoading(true);
 		fetcher.submit({
 			score: feedback.score,
 			scoreMsg: feedback.msg,
@@ -44,6 +46,7 @@ function IndexComponent({
 				}
 			}
 		}
+		setTestimonialSubmitLoading(false);
 	}, [fetcher.data])
 	
 	return (
@@ -88,11 +91,11 @@ function IndexComponent({
 										</Box>
 									</InlineStack>
 								</Box>
-								<TextField onChange={(val) => {setFeedbackEmail(val)}} value={feedbackEmail} label="Email" type="email" />
-								<TextField onChange={(val) => {setFeedbackContent(val)}} value={feedbackContent} label="Feedback" type="text" multiline={5} />
+								<TextField onChange={(val) => {setFeedbackEmail(val)}} value={feedbackEmail} label="Email (Optional)" type="email" />
+								<TextField onChange={(val) => {setFeedbackContent(val)}} value={feedbackContent} label="Feedback (Optional)" type="text" multiline={5} />
 							</Box>
 							<TitleBar title="Feedback">
-								<button onClick={handleSubmitFeedback} variant="primary">Submit</button>
+								<button loading={testimonialSubmitLoading} onClick={handleSubmitFeedback} variant="primary">Submit</button>
 								<button onClick={() => {shopify.modal.hide('my-modal')}}>Cancel</button>
 							</TitleBar>
 						</Modal>
