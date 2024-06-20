@@ -20,7 +20,7 @@ export const action = async ({ request }) => {
 		await prisma.youTubeAPI.delete({
 			where: {storeName: shop}
 		})
-    return json({ success: true, insert:false, response:"Script removed successfully" });
+    return json({ success: true, insert:false, response:"Channel removed successfully" });
   } catch (error) {
     console.error(error);
     return json({ success: false, error: error.message });

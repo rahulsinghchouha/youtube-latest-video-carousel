@@ -112,7 +112,7 @@ function ChannelFormComponent({ setShowFeedbackModal, setShowChannelForm, ownApi
 			setWait(false);
 			if (fetcher.data.success) {
 				if (fetcher.data.insert === true) {
-					shopify.toast.show('Script tag added successfully!');
+					shopify.toast.show('Channel added successfully!');
 					setUserAPIKey("");
 					setInputValue("");
 					setSelectedOptions(deselectedOptions);
@@ -127,7 +127,7 @@ function ChannelFormComponent({ setShowFeedbackModal, setShowChannelForm, ownApi
 					setApiFieldError(true);
 					setApiFieldErrorMsg(fetcher.data.error);
 				} else {
-					shopify.toast.show(`Failed to add script tag: ${fetcher.data.error}`, { isError: true });
+					shopify.toast.show(`Failed to add carousel: ${fetcher.data.error}`, { isError: true });
 				}
 			}
 		}
