@@ -346,7 +346,7 @@ function EditComponent({
 												</Grid.Cell>
 											))
 											:
-											(<Text variant='headingLg' tone='disabled'>No Playlists found for this channel</Text>)
+											(<Grid.Cell columnSpan={{ xs: 6, sm: 3, md: 3, lg: 6, xl: 6 }}><Text variant='headingLg' tone='disabled'>No Playlists found for this channel</Text></Grid.Cell>)
 									}
 								</Grid>
 							</Scrollable>
