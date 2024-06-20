@@ -39,47 +39,39 @@ const DocumentationAndFAQ = () => {
 						<Box paddingBlock={"300"}>
 						{selected === 1 ? (
 							<BlockStack gap={"400"}>
-								<BlockStack >
-									<Box>
-										<Text variant='headingMd' as="h3">1. Initially your carousel appears in the online store uninitialized.</Text>
-									</Box>
-									<figure>
-										<img width={"100%"} src="/uninitialized-carousel.png" alt="Uninitialized carousel in online store" />
-									</figure>
-								</BlockStack>
 
 								<BlockStack gap={"300"}>
 									<Text variant="headingMd" as="h3">
-										2. Choose Channel and Add API Key
+										1. Choose Channel and Add API Key
 									</Text>
 									<Text variant='bodyMd' as='p'> You simply add your API key, choose your desired youtube channel, and your online store gets a highly functional and elegant carousel.</Text>
 									<InlineGrid columns={1}>
-										<figure>
-											<img width={"100%"} src="/add-information.png" alt="Choose Channel and Add Api Key" />
+										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+											<img width={"100%"} src="/add-information-blurred.png" alt="Choose Channel and Add Api Key" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
 
 								<BlockStack gap={"300"}>
 									<Text variant="headingMd" as="h3">
-										3. The carousel is now activated
+										2. The carousel is now activated
 									</Text>
 									<Text variant='bodyMd' as='p'>The carousel in your online store is now working. It will show the latest videos from the selected youtube channel</Text>
 									<InlineGrid columns={1}>
-										<figure>
-											<img width={"100%"} src="/carousel-active.png" alt="Example of a working carousel" />
+										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+											<img width={"100%"} src="/carousel-active-blurred.png" alt="Example of a working carousel" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
 
 								<BlockStack gap={"300"}>
 									<Text variant="headingMd" as="h3">
-										4. Optionally, you can also select a particular playlist from that channel to show in your carousel
+										3. Optionally, you can also select a particular playlist from that channel to show in your carousel
 									</Text>
 									<Text variant='bodyMd' as='p'>Click on the 'Browse Playlists' link to see all the playlists of the channel</Text>
 									<InlineGrid columns={1}>
-										<figure>
-											<img width={"100%"} src="/browse-playlists.png" alt="Example of a working carousel" />
+										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+											<img width={"100%"} src="/browse-playlists-blurred.png" alt="Example of a working carousel" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
@@ -90,8 +82,8 @@ const DocumentationAndFAQ = () => {
 									</Text>
 									<Text variant='bodyMd' as='p'>You can also change, at any time, the channel itself or the playlist. You can also remove the playlist entirely to show the latest videos instead.</Text>
 									<InlineGrid columns={1}>
-										<figure>
-											<img width={"100%"} src="/playlist-active.png" alt="Example of a working carousel" />
+										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+											<img width={"100%"} src="/playlist-active-blurred.png" alt="Example of a working carousel" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
@@ -101,8 +93,8 @@ const DocumentationAndFAQ = () => {
 										5. That's it! Your carousel is now visible in your online store.
 									</Text>
 									<InlineGrid columns={1}>
-										<figure>
-											<img width={"100%"} src="example-carousel-working.png" alt="Example of a working carousel" />
+										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+											<img width={"100%"} src="example-carousel-working-blurred.png" alt="Example of a working carousel" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
@@ -111,10 +103,25 @@ const DocumentationAndFAQ = () => {
 							<BlockStack gap={"400"}>
 								<BlockStack >
 									<Box>
-										<Text variant='headingMd' as="h3">1. Go to your online store in your shopify admin and click the customize button to customize the theme</Text>
+										<Text variant='headingMd' as="h3">Directly add to your store through the deep link provided.</Text>
 									</Box>
-									<figure>
-										<img width={"100%"} src="/add-to-store-1.png" alt="Uninitialized carousel in online store" />
+									<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+										<img width={"100%"} src="/add-to-store-deeplink-blurred.png" alt="Uninitialized carousel in online store" />
+									</figure>
+									<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px", display:"flex", alignItems:'center', justifyContent:'center'}}>
+										<img width={"90%"} src="/deeplink-add-success-blurred.png" alt="Uninitialized carousel in online store" />
+									</figure>
+								</BlockStack>
+								<BlockStack>
+									<Text variant='headingMd' as="h3">OR</Text>
+								</BlockStack>
+								<BlockStack  gap={"300"}>
+										<Text variant='headingMd' as="h3">
+											1. Edit your store theme
+										</Text>
+										<Text variant='bodyMd' as='p'>Go to your online store in your shopify admin and click the customize button to customize the theme.</Text>
+									<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+										<img width={"100%"} src="/add-to-store-1-blurred.png" alt="Uninitialized carousel in online store" />
 									</figure>
 								</BlockStack>
 
@@ -124,19 +131,20 @@ const DocumentationAndFAQ = () => {
 									</Text>
 									<Text variant='bodyMd' as='p'> This will create an empty carousel container in the store. You can drag and place this section as per your liking.</Text>
 									<InlineGrid columns={1}>
-										<figure>
-											<img width={"100%"} src="/add-to-store-2.png" alt="Choose Channel and Add Api Key" />
+										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+											<img width={"100%"} src="/add-to-store-2-blurred.png" alt="Choose Channel and Add Api Key" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
 
 								<BlockStack gap={"300"}>
-									<Text variant="headingLg" as="h3">
-										3. Save the theme. You are all done!
+									<Text variant="headingMd" as="h3">
+										3. Save the theme.
 									</Text>
+									<Text variant='bodyMd' as='p'>You are all fone!</Text>
 									<InlineGrid columns={1}>
-										<figure>
-											<img width={"100%"} src="/add-to-store-3.png" alt="Example of a working carousel" />
+										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
+											<img width={"100%"} src="/add-to-store-3-blurred.png" alt="Example of a working carousel" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>

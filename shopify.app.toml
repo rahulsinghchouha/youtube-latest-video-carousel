@@ -3,7 +3,7 @@
 client_id = "22f194d67ef4f81318def14cfb3d0151"
 name = "Conative Youtube Carousel"
 handle = "youtube-latest-video-carousel"
-application_url = "https://hint-hd-numbers-modelling.trycloudflare.com"
+application_url = "https://asking-talked-shipped-il.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_themes,write_themes"
 
 [auth]
 redirect_urls = [
-  "https://hint-hd-numbers-modelling.trycloudflare.com/auth/callback",
-  "https://hint-hd-numbers-modelling.trycloudflare.com/auth/shopify/callback",
-  "https://hint-hd-numbers-modelling.trycloudflare.com/api/auth/callback"
+  "https://asking-talked-shipped-il.trycloudflare.com/auth/callback",
+  "https://asking-talked-shipped-il.trycloudflare.com/auth/shopify/callback",
+  "https://asking-talked-shipped-il.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
@@ -31,7 +31,7 @@ api_version = "2024-04"
   shop_deletion_url = "https://youtube-latest-video-carousel.onrender.com/webhooks"
 
 [app_proxy]
-url = "https://hint-hd-numbers-modelling.trycloudflare.com/fetch-youtube-data"
+url = "https://asking-talked-shipped-il.trycloudflare.com/fetch-youtube-data"
 subpath = "proxy-fetch"
 prefix = "apps"
 

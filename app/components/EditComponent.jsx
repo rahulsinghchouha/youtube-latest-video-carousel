@@ -108,7 +108,7 @@ function EditComponent({
 			setEditApiFieldError(true);
 			return;
 		}
-		fetcher.submit(
+		fetcher.submit( 
 			{},
 			{ method: 'post', action: `/add-script-tag?channel=${encodeURIComponent(editChannelName)}&key=${encodeURIComponent(editUserAPIKey)}&edit=true`, }
 		);
@@ -127,7 +127,7 @@ function EditComponent({
 			setEditInputValue(selectedValue[0] || '');
 			setEditChannelName(selected[0] || '');
 		},
-		[editOptions]);
+	[editOptions]);
 
 
 	const handleRemoveCarousel = () => {

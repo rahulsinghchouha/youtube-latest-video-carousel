@@ -26,6 +26,19 @@ model YouTubeAPI {
 	lastFetchData Json?
 }
 
+type Feedback {
+  score     Int?
+  scoreMsg  String?
+  email     String?
+  content   String?
+}
+
+model AppTestimonial {
+	id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  storeName  String   @unique
+	feedback 	 Feedback?
+}
+
 model Session {
   session_id  String    @id @default(auto()) @map("_id") @db.ObjectId
   id          String    @unique

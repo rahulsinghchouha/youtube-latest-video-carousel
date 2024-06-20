@@ -1,18 +1,51 @@
 import { TitleBar, Modal } from '@shopify/app-bridge-react';
 import { Banner, BlockStack, Box, Button, InlineStack, Text, TextField } from '@shopify/polaris'
-import { StarIcon, StarFilledIcon, MagicIcon } from '@shopify/polaris-icons';
+import { StarIcon, StarFilledIcon, MagicIcon, ThumbsUpIcon } from '@shopify/polaris-icons';
 import { useAppBridge } from '@shopify/app-bridge-react';
+import { useFetcher } from '@remix-run/react';
+import { useEffect, useState } from 'react';
 
 function IndexComponent({
 	history,
+	match,
 	setShowFeedbackModal,
 	showFeedbackModal,
 	setFeedback,
 	feedback,
 	setShowChannelForm,
-
+	feedbackMatch,
 }) {
 	const shopify = useAppBridge();
+	const fetcher = useFetcher();
+	const [feedbackEmail, setFeedbackEmail] = useState("");
+	const [feedbackContent, setFeedbackContent] = useState("");
+
+	const handleSubmitFeedback = () => {
+		fetcher.submit({
+			score: feedback.score,
+			scoreMsg: feedback.msg,
+			email: feedbackEmail,
+			content: feedbackContent
+		}, { 
+			method: "POST", 
+			action: `/add-testimonial` 
+		})
+	}
+
+	useEffect(()=>{	
+		if(fetcher.data) {
+			if(fetcher.data.success){
+				shopify.toast.show("Thank you! Your feedback has been submitted");
+			} else {
+				if (fetcher.data.error) {
+					shopify.toast.show(fetcher.data.error , { isError: true });
+				} else {
+					shopify.toast.show(`Failed to add channel: ${fetcher.data.error}`, { isError: true });
+				}
+			}
+		}
+	}, [fetcher.data])
+	
 	return (
 		<BlockStack gap="300">
 			<BlockStack gap="200">
@@ -30,7 +63,7 @@ function IndexComponent({
 			</BlockStack>
 
 			{<InlineStack gap="300">
-				{history ? (
+				{(history) ? feedbackMatch ? (<Banner tone='info' icon={ThumbsUpIcon} ><Text variant='bodyMd' as='p'>Thank you for using Conative YouTube Carousel!</Text></Banner>): (
 					<Banner tone="">
 						<Text as="p">Are you enjoying using this carousel? <Button onClick={() => { setShowFeedbackModal(prev => !prev) }} variant="plain">Give us your feedback</Button></Text>
 						<Modal id="my-modal" open={showFeedbackModal} onClose={() => { setShowFeedbackModal(prev => !prev) }} >
@@ -55,15 +88,15 @@ function IndexComponent({
 										</Box>
 									</InlineStack>
 								</Box>
-								<TextField label="Email" type="email" />
-								<TextField label="Feedback" type="text" multiline={5} />
+								<TextField onChange={(val) => {setFeedbackEmail(val)}} value={feedbackEmail} label="Email" type="email" />
+								<TextField onChange={(val) => {setFeedbackContent(val)}} value={feedbackContent} label="Feedback" type="text" multiline={5} />
 							</Box>
 							<TitleBar title="Feedback">
-								<button variant="primary">Submit</button>
-								<button onClick={() => shopify.modal.hide('my-modal')}>Cancel</button>
+								<button onClick={handleSubmitFeedback} variant="primary">Submit</button>
+								<button onClick={() => {shopify.modal.hide('my-modal')}}>Cancel</button>
 							</TitleBar>
 						</Modal>
-					</Banner>) :
+					</Banner>) : 
 					(
 						<Button
 							size="large"

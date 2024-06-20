@@ -1,5 +1,5 @@
 import { json } from "@remix-run/node";
-import { authenticate, shopifyApiInstance } from "../shopify.server";
+import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { isValidYouTubeApiKey } from "../utils/utilFunctions";
 import { encrypt } from "../utils/encryption";
@@ -38,15 +38,11 @@ export const action = async ({ request }) => {
 			lastFetchTimeStamp: null,
 		},
 	});
-  const accessToken = session.accessToken;
 	if (!session.accessToken) {
     return json({ success: false, error: `Missing access token for shop - ${session.scope}`, editing });
   } else if (!session.shop) {
 		return json({ success: false, error: 'Missing shop', editing });
 	}
-	const client = new shopifyApiInstance.clients.Rest({
-		session: { shop, accessToken } 
-	})
 
   try {
     return json({ success: true, insert:true, response: playlistRemove ? "Playlist removed." : playlistId ? "Playlist added to store" : "Channel added to store", editing });

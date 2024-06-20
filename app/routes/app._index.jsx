@@ -14,6 +14,7 @@ import { decrypt } from "../utils/encryption";
 
 export const loader = async ({ request }) => {
 	let history = null;
+	let feedback = null;
 	const { session } = await authenticate.admin(request);
 	const match = await prisma.youTubeAPI.findFirst({
 		where: {
@@ -24,11 +25,18 @@ export const loader = async ({ request }) => {
 		history = await getChannelInfo(match.apiKey, match.channelName);
 		match.apiKey = decrypt(match.apiKey)
 	}
-	return json({ history, match, ownApiKey:process.env.YOUTUBE_API_KEY, appBlockId: process.env.SHOPIFY_YOUTUBE_CAROUSEL_ID });
+
+	const feedbackMatch = await prisma.AppTestimonial.findFirst({
+		where: {
+			storeName: session.shop
+		}
+	})
+	if(feedbackMatch) feedback = feedbackMatch;
+	return json({ history, match, ownApiKey:process.env.YOUTUBE_API_KEY, appBlockId: process.env.SHOPIFY_YOUTUBE_CAROUSEL_ID, feedbackMatch: feedback, });
 };
 
 export default function Index() {
-	const { history, match, ownApiKey, appBlockId } = useLoaderData();
+	const { history, match, ownApiKey, appBlockId, feedbackMatch } = useLoaderData();
 	const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 	const [feedback, setFeedback] = useState({
 		score: 0,
@@ -115,7 +123,7 @@ export default function Index() {
 									tabs[selected].id === "main-content-1" ? (
 										<BlockStack gap={"500"}>
 											<Card>
-												<IndexComponent feedback={feedback} history={history} setFeedback={setFeedback} setShowChannelForm={setShowChannelForm} setShowFeedbackModal={setShowFeedbackModal} showFeedbackModal={showFeedbackModal} />
+												<IndexComponent feedbackMatch={feedbackMatch} match={match} feedback={feedback} history={history} setFeedback={setFeedback} setShowChannelForm={setShowChannelForm} setShowFeedbackModal={setShowFeedbackModal} showFeedbackModal={showFeedbackModal} />
 											</Card>
 											{history && <EditComponent match={match} history={history} ownApiKey={ownApiKey} appBlockId={appBlockId} />}
 											{showChannelForm && (<ChannelFormComponent ownApiKey={ownApiKey} setShowFeedbackModal={setShowFeedbackModal} setShowChannelForm={setShowChannelForm} />)}
