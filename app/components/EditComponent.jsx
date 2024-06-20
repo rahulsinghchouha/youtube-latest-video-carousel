@@ -324,7 +324,7 @@ function EditComponent({
 						expandOnPrint
 					>
 						<Box padding={400}>
-							<Scrollable shadow style={{ height: '180px' }} focusable>
+							<Scrollable shadow style={{ height: playlists && playlists.length > 0 ? '180px': 'auto' }} focusable>
 								<Grid>
 									{
 										(playlists && playlists.length > 0) ?
