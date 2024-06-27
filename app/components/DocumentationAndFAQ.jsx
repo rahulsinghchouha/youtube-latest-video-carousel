@@ -109,7 +109,7 @@ const DocumentationAndFAQ = () => {
 										<img width={"100%"} src="/add-to-store-deeplink-blurred.png" alt="Uninitialized carousel in online store" />
 									</figure>
 									<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px", display:"flex", alignItems:'center', justifyContent:'center'}}>
-										<img width={"90%"} src="/deeplink-add-success-blurred.png" alt="Uninitialized carousel in online store" />
+										<img width={"90%"} src="/deeplink-success-named.png" alt="Uninitialized carousel in online store" />
 									</figure>
 								</BlockStack>
 								<BlockStack>
@@ -132,7 +132,7 @@ const DocumentationAndFAQ = () => {
 									<Text variant='bodyMd' as='p'> This will create an empty carousel container in the store. You can drag and place this section as per your liking.</Text>
 									<InlineGrid columns={1}>
 										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
-											<img width={"100%"} src="/add-to-store-2-blurred.png" alt="Choose Channel and Add Api Key" />
+											<img width={"100%"} src="/add-to-store-4-blurred.png" alt="Choose Channel and Add Api Key" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
@@ -144,7 +144,7 @@ const DocumentationAndFAQ = () => {
 									<Text variant='bodyMd' as='p'>You are all fone!</Text>
 									<InlineGrid columns={1}>
 										<figure style={{padding:"15px", backgroundColor:"#F1F1F1", borderRadius:"8px"}}>
-											<img width={"100%"} src="/add-to-store-3-blurred.png" alt="Example of a working carousel" />
+											<img width={"100%"} src="/add-to-store-5-blurred.png" alt="Example of a working carousel" />
 										</figure>
 									</InlineGrid>
 								</BlockStack>
