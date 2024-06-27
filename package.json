@@ -1,5 +1,5 @@
 {
-  "name": "Conative Youtube Carousel",
+  "name": "CITS TubeShow Carousel",
   "private": true,
   "scripts": {
     "build": "remix vite:build",

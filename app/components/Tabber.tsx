@@ -111,6 +111,7 @@ function IndexFiltersDefaultExample() {
     return true;
   };
 
+
   const primaryAction: IndexFiltersProps['primaryAction'] =
     selected === 0
       ? {

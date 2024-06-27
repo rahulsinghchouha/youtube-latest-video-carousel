@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "22f194d67ef4f81318def14cfb3d0151"
-name = "Conative Youtube Carousel"
+name = "CITS TubeShow Carousel"
 handle = "youtube-latest-video-carousel"
 application_url = "https://asking-talked-shipped-il.trycloudflare.com"
 embedded = true
@@ -17,9 +17,9 @@ scopes = "read_themes,write_themes"
 
 [auth]
 redirect_urls = [
-  "https://asking-talked-shipped-il.trycloudflare.com/auth/callback",
-  "https://asking-talked-shipped-il.trycloudflare.com/auth/shopify/callback",
-  "https://asking-talked-shipped-il.trycloudflare.com/api/auth/callback"
+  "https://youtube-latest-video-carousel.onrender.com/auth/callback",
+  "https://youtube-latest-video-carousel.onrender.com/auth/shopify/callback",
+  "https://youtube-latest-video-carousel.onrender.com/api/auth/callback"
 ]
 
 [webhooks]
@@ -31,7 +31,7 @@ api_version = "2024-04"
   shop_deletion_url = "https://youtube-latest-video-carousel.onrender.com/webhooks"
 
 [app_proxy]
-url = "https://asking-talked-shipped-il.trycloudflare.com/fetch-youtube-data"
+url = "https://youtube-latest-video-carousel.onrender.com/fetch-youtube-data"
 subpath = "proxy-fetch"
 prefix = "apps"
 

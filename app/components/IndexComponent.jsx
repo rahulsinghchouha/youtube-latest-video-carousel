@@ -28,9 +28,9 @@ function IndexComponent({
 			scoreMsg: feedback.msg,
 			email: feedbackEmail,
 			content: feedbackContent
-		}, { 
-			method: "POST", 
-			action: `/add-testimonial` 
+		}, {
+			method: "POST",
+			action: `/add-testimonial`
 		})
 	}
 
@@ -66,7 +66,7 @@ function IndexComponent({
 			</BlockStack>
 
 			{<InlineStack gap="300">
-				{(history) ? feedbackMatch ? (<Banner tone='info' icon={ThumbsUpIcon} ><Text variant='bodyMd' as='p'>Thank you for using Conative YouTube Carousel!</Text></Banner>): (
+				{(history) ? feedbackMatch ? (<Banner tone='info' icon={ThumbsUpIcon} ><Text variant='bodyMd' as='p'>Thank you for using CITS TubeShow Carousel!</Text></Banner>): (
 					<Banner tone="">
 						<Text as="p">Are you enjoying using this carousel? <Button onClick={() => { setShowFeedbackModal(prev => !prev) }} variant="plain">Give us your feedback</Button></Text>
 						<Modal id="my-modal" open={showFeedbackModal} onClose={() => { setShowFeedbackModal(prev => !prev) }} >

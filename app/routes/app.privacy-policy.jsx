@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
       subtitle="Your privacy is important to us"
       compactTitle
 		>
-      <TitleBar title="Conative Youtube Carousel" />
+      <TitleBar title="CITS TubeShow Carousel" />
       <Layout>
         <Layout.Section>
           <Card sectioned>
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
 			<FooterHelp align="end" >
        <Text variant="bodyMd" as="p">
 			 Copyright{' © '+ new Date().getFullYear()+' '} 
-       Conative Youtube Carousel
+       CITS TubeShow Carousel
 			 </Text>
       </FooterHelp>
     </Page>

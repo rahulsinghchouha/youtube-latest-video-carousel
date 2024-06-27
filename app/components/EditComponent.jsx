@@ -81,7 +81,7 @@ function EditComponent({
 		try {
 			setWaitPlaylistSelection(item.id);
 			fetcher.submit({}, { 
-				method: "POST", 
+				method: "POST",
 				action: `/add-script-tag?channel=${encodeURIComponent(editChannelName)}&key=${encodeURIComponent(editUserAPIKey)}&edit=true&playlist=${item.id}` 
 			})
 		} catch (error) {
@@ -173,6 +173,7 @@ function EditComponent({
 		const data = await response.json();
 		setPlaylists(data.items);
 	};
+
 
 	/************************
 	 *   UseEffect Hooks    *
@@ -280,7 +281,7 @@ function EditComponent({
 							type={showKey ? "text" : "password"}
 							autoComplete="off"
 							error={editApiFieldError ? editApiFieldErrorMsg : undefined}
-							onChange={(val) => { setEditApiFieldError(false); setEditApiFieldErrorMsg("API key is required."); setEditUserAPIKey(val) }}
+							onChange={(val) => { setEditApiFieldError(false); setEditApiFieldErrorMsg("API key is required."); setEditUserAPIKey(val); }}
 							value={editUserAPIKey}
 							suffix={<Button submit={false} onClick={() => { setShowKey(prev => !prev) }} icon={showKey ? HideIcon : ViewIcon} variant="plain" />}
 						/>

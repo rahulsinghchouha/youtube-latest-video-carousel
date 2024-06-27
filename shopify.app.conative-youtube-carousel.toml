@@ -1,8 +1,8 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "86140e47838600995a7a8b7d948b934c"
-name = "Conative Youtube Carousel"
-handle = "conative-youtube-carousel"
+name = "CITS TubeShow Carousel"
+handle = "cits-youtube-carousel"
 application_url = "https://lovely-surface-assuming-announces.trycloudflare.com"
 embedded = true
 

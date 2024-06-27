@@ -76,7 +76,7 @@ export default function Index() {
 
 	return (
 		<Page>
-			<TitleBar title="Conative Youtube Carousel" />
+			<TitleBar title="CITS TubeShow Carousel" />
 			<BlockStack gap="500">
 				<Layout>
 					<Layout.Section variant="fullWidth">
@@ -140,7 +140,7 @@ export default function Index() {
 			<FooterHelp align="end" >
 				<Text variant="bodyMd" as="p">
 					Copyright{' © ' + new Date().getFullYear() + ' '}
-					Conative Youtube Carousel
+					CITS TubeShow Carousel
 				</Text>
 			</FooterHelp>
 		</Page>
