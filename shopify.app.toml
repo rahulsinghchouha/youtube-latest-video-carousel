@@ -2,7 +2,7 @@
 
 client_id = "22f194d67ef4f81318def14cfb3d0151"
 name = "CITS TubeShow Carousel"
-handle = "youtube-latest-video-carousel"
+handle = "cits-tubeshow-carousel"
 application_url = "https://asking-talked-shipped-il.trycloudflare.com"
 embedded = true
 
