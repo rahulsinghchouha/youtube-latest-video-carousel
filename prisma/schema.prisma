@@ -16,7 +16,7 @@ datasource db {
 
 model YouTubeAPI {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  storeName  String   @unique
+  storeName  String
   apiKey     String
 	playlistId String?	
 	showPlaylist Boolean? @default(false)  
